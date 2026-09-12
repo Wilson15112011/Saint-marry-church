@@ -171,4 +171,8 @@ window.registerText = <?= json_encode([
 </script>
 <script src="register.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> f9d1529 (Initial commit)

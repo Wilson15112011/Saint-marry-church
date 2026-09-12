@@ -143,4 +143,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </main>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> f9d1529 (Initial commit)
