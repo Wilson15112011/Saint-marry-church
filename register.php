@@ -229,6 +229,7 @@ function old(string $key): string {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($t['page_title']) ?></title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="login.css?v=6">
     <link rel="stylesheet" href="register.css?v=6">
 </head>
