@@ -1,0 +1,321 @@
+/* ================================================
+   otp.css – صفحة التحقق من OTP
+   يُستخدم بعد login.css
+   ================================================ */
+
+/* ── OTP Card ── */
+.otp-card {
+    max-width: 460px;
+    padding: 48px 44px 40px;
+    text-align: center;
+}
+
+/* ── Steps Bar (shared with register) ── */
+.steps-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+    direction: ltr; /* steps go left to right visually */
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 72px;
+}
+
+.step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--white);
+    color: var(--text-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.step span {
+    font-size: 0.72rem;
+    color: var(--text-soft);
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.step.active .step-num {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+    box-shadow: 0 0 0 4px rgba(200,151,58,0.2);
+}
+
+.step.active span {
+    color: var(--gold-dark);
+    font-weight: 700;
+}
+
+.step.done .step-num {
+    background: #16A34A;
+    border-color: #16A34A;
+    color: var(--white);
+}
+
+.step.done span {
+    color: #16A34A;
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+    min-width: 28px;
+    margin-bottom: 22px;
+    transition: background 0.3s;
+}
+
+.step-line.done-line {
+    background: #16A34A;
+}
+
+/* ── Email Icon ── */
+.otp-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(200,151,58,0.12), rgba(200,151,58,0.05));
+    border: 1.5px solid rgba(200,151,58,0.25);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--gold);
+    animation: fadeUp 0.5s ease both;
+}
+
+/* ── Titles ── */
+.otp-card h2 {
+    font-family: 'Amiri', serif;
+    font-size: 1.7rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.email-display {
+    color: var(--gold-dark);
+    font-size: 0.95rem;
+    direction: ltr;
+    display: inline-block;
+}
+
+/* ── OTP Input Boxes ── */
+.otp-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 16px;
+    direction: ltr;
+}
+
+.otp-box {
+    width: 52px;
+    height: 60px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Cairo', monospace;
+    color: var(--text-dark);
+    background: var(--input-bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    caret-color: var(--gold);
+}
+
+.otp-box:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(200,151,58,0.15);
+    transform: translateY(-2px);
+}
+
+.otp-box:not(:placeholder-shown) {
+    border-color: var(--gold-dark);
+    background: #FFFBF2;
+}
+
+.otp-dash {
+    color: var(--text-soft);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 0 2px;
+    margin-bottom: 4px;
+}
+
+/* Shake animation on error */
+.otp-inputs.shake {
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-8px); }
+    40%       { transform: translateX(8px); }
+    60%       { transform: translateX(-6px); }
+    80%       { transform: translateX(6px); }
+}
+
+/* ── Timer ── */
+.timer-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+}
+
+.timer-row svg {
+    stroke: var(--gold);
+    flex-shrink: 0;
+}
+
+#timerDisplay {
+    font-weight: 700;
+    color: var(--gold-dark);
+    font-family: monospace;
+    font-size: 0.95rem;
+    min-width: 38px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* ── Resend Row ── */
+.resend-row {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    color: var(--text-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.resend-link {
+    color: var(--gold-dark);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.resend-link:hover:not(.disabled) {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.resend-link.disabled {
+    color: var(--text-soft);
+    cursor: not-allowed;
+    pointer-events: none;
+    font-weight: 400;
+}
+
+/* ════════════════════════════════
+   SUCCESS SCREEN
+   ════════════════════════════════ */
+.success-screen {
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+    border: 2px solid #6EE7B7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: #059669;
+    animation: popIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+.success-screen h2 {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.redirect-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 4px;
+    margin: 20px 0 8px;
+    overflow: hidden;
+}
+
+.redirect-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold));
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+
+/* ════════════════════════════════
+   Register Steps Bar
+   ════════════════════════════════ */
+.steps-bar-register {
+    composes: steps-bar;
+}
+
+/* ── Field Hint ── */
+.field-hint {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--text-soft);
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .otp-card {
+        padding: 36px 20px 32px;
+    }
+
+    .otp-box {
+        width: 42px;
+        height: 52px;
+        font-size: 1.3rem;
+    }
+
+    .steps-bar {
+        gap: 0;
+    }
+
+    .step span {
+        font-size: 0.65rem;
+    }
+
+    .step-line {
+        min-width: 16px;
+    }
+}
