@@ -246,6 +246,7 @@ $today = $ar_days[date('w')] . '، ' . date('j') . ' ' . $ar_months[(int)date('n
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $t['login_page_title'] ?></title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="login.css?v=<?= filemtime('login.css') ?>">
     <?php if ($lockout_seconds > 0): ?>
     <style>
