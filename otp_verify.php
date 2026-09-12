@@ -171,6 +171,7 @@ $seconds_left = max(0, ($_SESSION['otp_expiry'] ?? time() + 300) - time());
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($txt['title']) ?></title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="otp.css">
 </head>
