@@ -244,6 +244,7 @@ if ($secret) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <title>إعداد التحقق بخطوتين (2FA)</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="login.css">
     <style>
         :root {
