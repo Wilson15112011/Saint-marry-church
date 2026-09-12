@@ -2605,6 +2605,7 @@ if (isset($_GET['export_service_reports_pdf']) && $is_admin) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.2">
     <title><?= $t['page_title'] ?></title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="dashboard.css?v=<?= filemtime('dashboard.css') ?>">
 </head>
